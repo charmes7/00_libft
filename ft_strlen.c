@@ -6,15 +6,15 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:49:26 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/05 19:49:34 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/06 22:04:49 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
 	while (str[count] != '\0')

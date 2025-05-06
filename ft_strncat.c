@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:43:13 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/05 19:43:21 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/06 22:17:51 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	unsigned int	i;
 	unsigned int	j;
 
-	i = 0;
+	i = ft_strlen(dest);
 	j = 0;
-	while (dest[i] != '\0')
-		i++;
 	while (j < nb && src[j] != '\0')
 	{
 		dest[i] = src[j];
