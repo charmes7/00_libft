@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 07:41:53 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/06 07:58:19 by shkoh            ###   ########.fr       */
+/*   Created: 2025/05/05 19:45:07 by shkoh             #+#    #+#             */
+/*   Updated: 2025/05/05 19:45:31 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *ptr, int value, size_t num)
+char	*ft_strstr(char *str, char *to_find)
 {
-	size_t	i;
-	unsigned char	*temp;
+	int	i;
+	int	j;
 
-	temp = (unsigned char *)ptr;
+	if (to_find[0] == '\0')
+		return (str);
 	i = 0;
-	while (i < num)
+	while (str[i] != '\0')
 	{
-		*temp = (unsigned char)value;
-		temp++;
+		j = 0;
+		while (str[i + j] == to_find[j] && to_find[j] != '\0')
+		{
+			j++;
+		}
+		if (to_find[j] == '\0')
+			return (&str[i]);
 		i++;
 	}
-	return (ptr);
+	return (0);
 }
