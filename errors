@@ -1,0 +1,4 @@
+ft_memchr
+ft_strchr
+ft_strrchr
+ft_atoi

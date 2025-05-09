@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:10:49 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/09 23:03:30 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/09 23:43:53 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdint.h>
 
 void	*ft_memset(void *ptr, int value, size_t num);
 void	ft_bzero(void *s, size_t n);
@@ -40,11 +41,11 @@ int	ft_strcmp(char *s1, char*s2);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strdup(char *src);
 char	*ft_strjoin(char const *s1, char const *s2);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlen(char *str);
+size_t	ft_strlen(const char *str);
 char	*ft_strncat(char *dest, char *src, unsigned int nb);
-int	ft_strncmp(char *s1, char*s2, unsigned int n);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *str, int c);

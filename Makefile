@@ -10,13 +10,13 @@ INCLUDES_DIR = includes
 SRC_DIR = srcs
 
 # Source and object files
-SRC = ${SRC_DIR}/ft_memset.c ${SRC_DIR}/ft_bzero.c ${SRC_DIR}/ft_memcpy.c ${SRC_DIR}/ft_memccpy.c ${SRC_DIR}/ft_memmove.c \
-		${SRC_DIR}/ft_memchr.c ${SRC_DIR}/ft_memcmp.c ${SRC_DIR}/ft_calloc.c ${SRC_DIR}/ft_atoi.c ${SRC_DIR}/ft_isalnum.c \
-		${SRC_DIR}/ft_isalpha.c ${SRC_DIR}/ft_isascii.c ${SRC_DIR}/ft_isdigit.c ${SRC_DIR}/ft_isprint.c ${SRC_DIR}/ft_tolower.c \
-		${SRC_DIR}/ft_toupper.c ${SRC_DIR}/ft_split.c ${SRC_DIR}/ft_strcat.c ${SRC_DIR}/ft_strchr.c ${SRC_DIR}/ft_strcmp.c \
-		${SRC_DIR}/ft_strcpy.c ${SRC_DIR}/ft_strdup.c ${SRC_DIR}/ft_strjoin.c ${SRC_DIR}/ft_strlcat.c ${SRC_DIR}/ft_strlcpy.c \
-		${SRC_DIR}/ft_strlen.c ${SRC_DIR}/ft_strncat.c ${SRC_DIR}/ft_strncmp.c ${SRC_DIR}/ft_strncpy.c ${SRC_DIR}/ft_strnstr.c
-		${SRC_DIR}/ft_strrchr.c ${SRC_DIR}/ft_strstr.c
+SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+		ft_memchr.c ft_memcmp.c ft_calloc.c ft_atoi.c ft_isalnum.c \
+		ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_tolower.c \
+		ft_toupper.c ft_split.c ft_strcat.c ft_strchr.c ft_strcmp.c \
+		ft_strcpy.c ft_strdup.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c \
+		ft_strlen.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnstr.c \
+		ft_strrchr.c ft_strstr.c
 OBJ = ${SRC:.c=.o}
 
 # Default target (all)
