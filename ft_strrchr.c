@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:52:39 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/05 20:48:03 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/11 19:32:49 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *str, int c)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == c)
+		if (str[i] == (unsigned char)c)
 			ptr = (char *)&str[i];
 		i++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		ptr = (char *)&str[i];
 	return (ptr);
 }

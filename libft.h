@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:10:49 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/09 23:43:53 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/11 19:38:58 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdint.h>
+# include <limits.h>
 
 void	*ft_memset(void *ptr, int value, size_t num);
 void	ft_bzero(void *s, size_t n);
