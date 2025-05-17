@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 22:20:59 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/06 22:34:37 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/17 19:01:50 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_calloc(size_t num, size_t size)
 {
 	void	*ptr;
 
+	if (num == 0 || size == 0)
+		return (malloc(0));
 	if (num > 0 && size > SIZE_MAX / num)
 		return (NULL);
 	ptr = malloc(num * size);

@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 07:41:53 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/06 22:20:10 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/17 20:25:16 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ void	*ft_memset(void *ptr, int value, size_t num)
 	i = 0;
 	while (i < num)
 	{
-		*temp = (unsigned char)value;
-		temp++;
+		temp[i] = (unsigned char)value;
 		i++;
 	}
 	return (ptr);

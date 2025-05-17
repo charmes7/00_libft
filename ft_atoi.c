@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:36:59 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/11 19:37:22 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/17 18:27:28 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,5 @@ int	ft_atoi(const char *nptr)
 		result = (result * 10) + (nptr[i] - '0');
 		i++;
 	}
-	if (result * sign > INT_MAX)
-		return (INT_MAX);
-	if (result * sign < INT_MIN)
-		return (INT_MIN);
 	return ((int)(sign * result));
 }

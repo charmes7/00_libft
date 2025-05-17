@@ -1,0 +1,11 @@
+ft_atoi - changes ascii to integer
+ft_itoa - changes integer to ascii
+ft_bzero - set a number of bytes in memory to zero
+ft_calloc - allocates memory for num elements each of size bytes and sets everything to zero, also handles size_t overflow of num * size.
+ft_memccpy - copy bytes from src to dest up to n bytes, if c is found, return a ptr to the byte after c, else return null
+ft_memchr - searches if a byte value c is found, through a generic pointer up to n bytes and returns the ptr of where it is found, else return NULL
+ft_memcmp - compares the first n bytes of two generic pointers and returns 0 if all bytes are equal, else return difference between first pair of bytes that differ.
+ft_memcpy - copys the byte values of memory area pointed to by src to dst, does not handle overlaps
+ft_memmove - copies n bytes from src to dest, handles overlaps
+ft_memset - sets each byte of a memory area to a given value, up to n bytes
+
