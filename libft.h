@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:10:49 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/11 19:38:58 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/19 09:16:26 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_isdigit(int c);
 int	ft_isprint(int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
-char	**ft_split(char *str, char *charset);
+char	**ft_split(char const *s, char c)
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strchr(const char *str, int c);
 int	ft_strcmp(char *s1, char*s2);
