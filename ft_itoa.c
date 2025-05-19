@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_intlen(long n)
+static int	ft_intlen(long n)
 {
 	int	count;
 
@@ -32,7 +32,7 @@ int	ft_intlen(long n)
 	return (count);
 }
 
-void	ft_digits(char *str, long n, int len)
+static void	ft_digits(char *str, long n, int len)
 {
 	while (n != 0)
 	{

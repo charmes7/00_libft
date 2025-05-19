@@ -35,7 +35,7 @@ int	ft_isdigit(int c);
 int	ft_isprint(int c);
 int	ft_tolower(int c);
 int	ft_toupper(int c);
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strchr(const char *str, int c);
 int	ft_strcmp(char *s1, char*s2);
@@ -51,5 +51,6 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strstr(char *str, char *to_find);
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 #endif

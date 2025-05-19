@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-int	is_charset(char s, char c)
+static int	is_charset(char s, char c)
 {
 	if (s == c)
 		return (1);
 	return (0);
 }
 
-int	count_words(char const *s, char c)
+static int	count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -45,7 +45,7 @@ int	count_words(char const *s, char c)
 	return (count);
 }
 
-char	*ft_extract(char **arr, char const *s, char c)
+static char	*ft_extract(char **arr, char const *s, char c)
 {
 	int	i;
 	int	j;
