@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 10:13:37 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/20 12:51:20 by shkoh            ###   ########.fr       */
+/*   Created: 2025/05/20 12:56:59 by shkoh             #+#    #+#             */
+/*   Updated: 2025/05/20 13:23:44 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	ft_putnbr_fd(int n, int fd)
 {
-	char			*str;
-	size_t			len;
-	unsigned int	i;
+	char	digit;
 
-	len = ft_strlen(s);
-	str = malloc(sizeof(char) * (len + 1));
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (i < len)
+	if (n == 0)
 	{
-		str[i] = f(i, s[i]);
-		i++;
+		write(fd, "0", 1);
+		return ;
 	}
-	str[i] = '\0';
-	return (str);
+	if (n == INT_MIN)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	digit = (n % 10) + '0';
+	write(fd, &digit, 1);
 }
-// apply function f which takes in a parameter of index of s and char of s
-// store the results into a string and return.
+
+// handle int min
+// convert int n to ascii print number by number

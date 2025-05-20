@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 14:45:31 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/19 09:15:20 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/20 13:31:28 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	count_words(char const *s, char c)
 	i = 0;
 	count = 0;
 	new_word = 0;
-	while (str[i])
+	while (s[i])
 	{
-		if (is_charset(str[i], c))
+		if (is_charset(s[i], c))
 			new_word = 0;
 		else
 		{
@@ -45,24 +45,24 @@ static int	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*ft_extract(char **arr, char const *s, char c)
+static const char	*ft_extract(char **arr, char const *s, char c)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 0;
-	while (is_charset(str[i], c) && str[i])
+	while (is_charset(s[i], c) && s[i])
 		i++;
-	while (!is_charset(str[i + j], c) && str[i + j])
+	while (!is_charset(s[i + j], c) && s[i + j])
 		j++;
 	*arr = malloc(sizeof(char) * (j + 1));
 	if (!*arr)
 		return (NULL);
 	j = 0;
-	while (!is_charset(str[i], c) && str[i])
+	while (!is_charset(s[i], c) && s[i])
 	{
-		(*arr)[j++] = str[i++];
+		(*arr)[j++] = s[i++];
 	}
 	(*arr)[j] = '\0';
 	return (s + i);
@@ -74,6 +74,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		word_count;
 
+	if (s == NULL)
+		return (NULL);
 	word_count = count_words(s, c);
 	arr = malloc(sizeof(char *) * (word_count + 1));
 	if (!arr)
