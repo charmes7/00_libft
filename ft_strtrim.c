@@ -26,7 +26,7 @@ static int	is_set(char c, char const *set)
 	return (0);
 }
 
-static char	*ft_strfill(size_t len, size_t i, char *str, char const *s1)
+static void	ft_strfill(size_t len, size_t i, char *str, char const *s1)
 {
 	size_t	k;
 
@@ -38,7 +38,6 @@ static char	*ft_strfill(size_t len, size_t i, char *str, char const *s1)
 		i++;
 	}
 	str[k] = '\0';
-	return (str);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -54,26 +53,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (is_set(s1[i], set))
 		i++;
 	j = ft_strlen(s1);
-	if (j != 0)
+	if (j > 0)
 		j = j - 1;
 	while (j > i && is_set(s1[j], set))
 		j--;
-	if (j >= i)
-		len = (j - i) + 1;
-	else
+	if (i >= ft_strlen(s1))
 		len = 0;
+	else
+		len = (j - i) + 1;
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	str = ft_strfill(len, i, str, s1);
+	ft_strfill(len, i, str, s1);
 	return (str);
 }
 
 // s1 = "--H-ello---"
 // set = "---"
 // output = "H-ello"
-// 3, 8, 8 - 3 + 1
-// 3,4,5,6,7,8
 // trims each character from set from beginning and end,
 // as soon as it hits a non set, it stops trimming.
 // start from front, check if current index is a set,

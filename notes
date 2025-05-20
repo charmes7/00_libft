@@ -10,5 +10,3 @@ ft_memmove - copies n bytes from src to dest, handles overlaps
 ft_memset - sets each byte of a memory area to a given value, up to n bytes
 ft_striteri - iterates through a string s and applies a function f, without any return values
 ft_strmapi - iterates through a string s and applies a function f and saves into a str, then return the str
-
-ft_substr (UNDEFINED REFERENCE ERROR)

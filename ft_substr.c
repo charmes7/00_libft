@@ -17,25 +17,26 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*ptr;
 	unsigned int	i;
 
-	ptr = malloc(sizeof(char) * len);
+	if (s == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
+	{
+		ptr = malloc(sizeof(char) * 1);
+		if (!ptr)
+			return (NULL);
+		ptr[0] = '\0';
+		return (ptr);
+	}
+	if ((start + len) > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
 	i = 0;
-	while (i < (len - 1))
-	{
+	while (i < len)
 		ptr[i++] = s[start++];
-	}
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-/*
-int main()
-{
-    printf("%s\n", ft_substr("Hello World", 0, 4));
-}
-*/
-// if s = "Hello World"
-// start (starting index in s) = 3
-// len (maximum length) = 4
-// output : (lo W)? or (lo \n)?
+// ft_substr("Hello", 2, 5)
+// lo 5 - 2 = 3
