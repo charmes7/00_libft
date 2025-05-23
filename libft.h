@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:10:49 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/20 13:24:48 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/24 03:40:35 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <string.h>
 # include <stdint.h>
 # include <limits.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 void	*ft_memset(void *ptr, int value, size_t num);
 void	ft_bzero(void *s, size_t n);
