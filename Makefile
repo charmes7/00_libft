@@ -28,8 +28,8 @@ ${NAME} : ${OBJ}
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-bonus: ${BONUS_OBJ}
-	ar rcs ${NAME} ${BONUS_OBJ}
+bonus: ${OBJ} ${BONUS_OBJ}
+	ar rcs ${NAME} ${OBJ} ${BONUS_OBJ}
 
 clean:
 	rm -f ${OBJ} ${BONUS_OBJ}
@@ -39,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all bonus
