@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 09:10:44 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/19 09:11:16 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/27 12:54:34 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr[i] = '\0';
 	return (ptr);
 }
-// ft_substr("Hello", 2, 5)
-// lo 5 - 2 = 3
