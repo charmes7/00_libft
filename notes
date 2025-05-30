@@ -1,1 +1,5 @@
-ft_atoi (reworked) - rebuilt and did my own test cases, manual did not handle overflow or underflows
+ft_atoi (reworked)
+ft_bzero (reworked)
+ft_calloc (reworked)
+ft_itoa (reworked)
+

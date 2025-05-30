@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:10:49 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/26 06:33:06 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/30 18:45:07 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdint.h>
 
 typedef struct s_list
 {

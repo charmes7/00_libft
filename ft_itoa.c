@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:05:32 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/18 22:30:27 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/05/30 18:52:48 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,3 +66,17 @@ char	*ft_itoa(int nbr)
 	ft_digits(str, n, len);
 	return (str);
 }
+
+/*
+#include <stdio.h>
+int main()
+{
+	printf("test1: ft_itoa(%s)\n", ft_itoa(0));
+	printf("test2: ft_itoa(%s)\n", ft_itoa(1));
+	printf("test3: ft_itoa(%s)\n", ft_itoa(-1));
+	printf("test4: ft_itoa(%s)\n", ft_itoa(42));
+	printf("test5: ft_itoa(%s)\n", ft_itoa(-42));
+	printf("test6: ft_itoa(%s)\n", ft_itoa(2147483647));
+	printf("test7: ft_itoa(%s)\n", ft_itoa(-2147483648));
+}
+*/
