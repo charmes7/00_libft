@@ -2,4 +2,7 @@ ft_atoi (reworked)
 ft_bzero (reworked)
 ft_calloc (reworked)
 ft_itoa (reworked)
-
+ft_memchr (reworked)
+ft_memcmp (reworked)
+ft_memcpy (reworked)
+ft_memmove (reworked)
