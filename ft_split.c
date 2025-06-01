@@ -5,67 +5,77 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 14:45:31 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/20 13:31:28 by shkoh            ###   ########.fr       */
+/*   Created: 2025/06/01 18:17:13 by shkoh             #+#    #+#             */
+/*   Updated: 2025/06/01 18:17:15 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_charset(char s, char c)
-{
-	if (s == c)
-		return (1);
-	return (0);
-}
-
-static int	count_words(char const *s, char c)
+void	free_split(char **arr)
 {
 	int	i;
-	int	count;
-	int	new_word;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
+int	count_word(char const *s, char c)
+{
+	int		i;
+	int		new_word;
+	int		count;
 
 	i = 0;
 	count = 0;
 	new_word = 0;
 	while (s[i])
 	{
-		if (is_charset(s[i], c))
+		if (s[i] == c)
+		{
 			new_word = 0;
+			i++;
+		}
 		else
 		{
 			if (new_word == 0)
 			{
-				count++;
 				new_word = 1;
+				count++;
 			}
+			i++;
 		}
-		i++;
 	}
 	return (count);
 }
 
-static const char	*ft_extract(char **arr, char const *s, char c)
+char const	*ft_extract(char **arr, char const *s, char c)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
-	while (is_charset(s[i], c) && s[i])
+	while (s[i] && s[i] == c)
 		i++;
-	while (!is_charset(s[i + j], c) && s[i + j])
+	while (s[i + j] && s[i + j] != c)
 		j++;
 	*arr = malloc(sizeof(char) * (j + 1));
-	if (!*arr)
+	if (!(*arr))
 		return (NULL);
 	j = 0;
-	while (!is_charset(s[i], c) && s[i])
+	while (s[i + j] && s[i + j] != c)
 	{
-		(*arr)[j++] = s[i++];
+		(*arr)[j] = s[i + j];
+		j++;
 	}
 	(*arr)[j] = '\0';
-	return (s + i);
+	return (s + (i + j));
 }
 
 char	**ft_split(char const *s, char c)
@@ -74,18 +84,48 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		word_count;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	word_count = count_words(s, c);
+	word_count = count_word(s, c);
 	arr = malloc(sizeof(char *) * (word_count + 1));
 	if (!arr)
 		return (NULL);
 	i = 0;
 	while (i < word_count)
 	{
-		s = ft_extract(&arr[i], s, c);
+		s = ft_extract(&(arr[i]), s, c);
+		if (!s)
+		{
+			free_split(arr);
+			return (NULL);
+		}
 		i++;
 	}
 	arr[i] = NULL;
 	return (arr);
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char *str = "42KL Piscine is awesome!";
+	char delimiter = ' ';
+	char **result = ft_split(str, delimiter);
+	int i = 0;
+
+	if (!result)
+	{
+		printf("ft_split returned NULL.\n");
+		return (1);
+	}
+
+	while (result[i])
+	{
+		printf("result[%d]: %s\n", i, result[i]);
+		i++;
+	}
+	free_split(result);
+	return (0);
+}
+*/

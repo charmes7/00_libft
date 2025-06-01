@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 09:11:41 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/19 09:11:55 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/06/01 19:06:25 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,36 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
+/*
+#include <stdio.h>
+#include <string.h>
+int main(void)
+{
+    char *trimmed;
+    trimmed = ft_strtrim("   Hello World!   ", " ");
+    printf("Trimmed: '%s'\n", trimmed);
+    free(trimmed);
+    trimmed = ft_strtrim("xxHelloWorldxx", "x");
+    printf("Trimmed: '%s'\n", trimmed);
+    free(trimmed);
+    trimmed = ft_strtrim("xxx", "x");
+    printf("Trimmed: '%s'\n", trimmed);
+    free(trimmed);
+    trimmed = ft_strtrim("Hello", "x");
+    printf("Trimmed: '%s'\n", trimmed);
+    free(trimmed);
+    trimmed = ft_strtrim("", "x");
+    printf("Trimmed: '%s'\n", trimmed);
+    free(trimmed);
+    trimmed = ft_strtrim("Hello", "");
+    printf("Trimmed: '%s'\n", trimmed);
+    free(trimmed);
+    trimmed = ft_strtrim(NULL, "x");
+    printf("Trimmed (NULL s1): %s\n", trimmed);
+    trimmed = ft_strtrim("Hello", NULL);
+    printf("Trimmed (NULL set): %s\n", trimmed);
+}
+*/
 // s1 = "--H-ello---"
 // set = "---"
 // output = "H-ello"
