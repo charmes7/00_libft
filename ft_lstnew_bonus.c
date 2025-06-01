@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 03:41:26 by shkoh             #+#    #+#             */
-/*   Updated: 2025/05/24 22:26:47 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/06/01 21:18:26 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_node;
-
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
+	t_list	*node;
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
 		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 
 /*
+#include <stdio.h>
 int main()
 {
-	t_list	*head;
-	t_list	*ptr;
-
-	int		*val1 = malloc(sizeof(int));
-	int		*val2 = malloc(sizeof(int));
-
-	*val1 = 42;
-	*val2 = 98;
-	head = ft_lstnew(val1);
-	ptr = ft_lstnew(val2);
-	head->next = ptr;
+	t_list	*node = ft_lstnew("Hello");
+	if (node != NULL)
+	{
+		printf("%s\n", (char *)node->content);
+		printf("%p\n", (char *)node->next);
+	}
+	else
+		printf("malloc failed");
 }
 */
