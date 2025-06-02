@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/24 03:41:26 by shkoh             #+#    #+#             */
-/*   Updated: 2025/06/01 21:18:26 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/06/02 14:14:48 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
+
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);

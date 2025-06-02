@@ -6,13 +6,13 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:17:13 by shkoh             #+#    #+#             */
-/*   Updated: 2025/06/01 18:17:15 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/06/02 14:21:13 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_split(char **arr)
+static void	free_split(char **arr)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ void	free_split(char **arr)
 	free(arr);
 }
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int		i;
 	int		new_word;
@@ -54,7 +54,7 @@ int	count_word(char const *s, char c)
 	return (count);
 }
 
-char const	*ft_extract(char **arr, char const *s, char c)
+static char const	*ft_extract(char **arr, char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -109,8 +109,8 @@ char	**ft_split(char const *s, char c)
 #include <stdio.h>
 int	main(void)
 {
-	char *str = "42KL Piscine is awesome!";
-	char delimiter = ' ';
+	char *str = "Hello!";
+	char delimiter = '\0';
 	char **result = ft_split(str, delimiter);
 	int i = 0;
 
