@@ -28,7 +28,7 @@ void	*ft_calloc(size_t num, size_t size)
 	ptr = malloc(num * size);
 	if (!ptr)
 		return (NULL);
-	ft_memset(ptr, 0, num);
+	ft_memset(ptr, 0, num * size);
 	return (ptr);
 }
 
