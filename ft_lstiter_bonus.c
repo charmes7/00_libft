@@ -22,3 +22,38 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		lst = lst->next;
 	}
 }
+
+/*
+void	toUpper(void	*content)
+{
+	char	*str;
+	int		i;
+
+	str = (char *)content;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+		i++;
+	}
+}
+
+#include <stdio.h>
+int main()
+{
+	t_list	*node = ft_lstnew(ft_strdup("hi"));
+	t_list	*node2 = ft_lstnew(ft_strdup("test"));
+	t_list	*node3 = ft_lstnew(ft_strdup("ok"));
+	t_list	*head = node;
+	ft_lstadd_back(&head, node2);
+	ft_lstadd_back(&head, node3);
+	printf("%s\n", (char *)node->content);
+	printf("%s\n", (char *)node2->content);
+	printf("%s\n", (char *)node3->content);
+	ft_lstiter(head, toUpper);
+	printf("%s\n", (char *)node->content);
+	printf("%s\n", (char *)node2->content);
+	printf("%s\n", (char *)node3->content);
+}
+*/

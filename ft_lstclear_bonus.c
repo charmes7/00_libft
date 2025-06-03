@@ -14,39 +14,39 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*next_node;
+	t_list	*node;
 
-	if (!lst || !*lst)
+	if (lst == NULL || *lst == NULL)
 		return ;
 	while (*lst != NULL)
 	{
-		next_node = (*lst)->next;
+		node = (*lst)->next;
 		del((*lst)->content);
 		free(*lst);
-		*lst = next_node;
-	}
-}
-
-/*
-void	ft_lstclear(t_list **lst, void (*del)(void *))
-{
-	t_list	*next_node;
-	t_list	*ptr;
-
-	if (!lst || !*lst)
-		return ;
-	ptr = *lst;
-	while (ptr != NULL)
-	{
-		next_node = ptr->next;
-		del(ptr->content);
-		free(ptr);
-		ptr = next_node;
+		*lst = node;
 	}
 	*lst = NULL;
 }
+
+/*
+void	del_lstcontent(void *content)
+{
+	free(content);
+}
+
+#include <stdio.h>
+int main()
+{
+	t_list	*node = ft_lstnew(ft_strdup("test"));
+	t_list	*node2 = ft_lstnew(ft_strdup("hello"));
+	t_list	*node3 = ft_lstnew(ft_strdup("hi"));
+	t_list	*head = node;
+	ft_lstadd_back(&head, node2);
+	ft_lstadd_back(&head, node3);
+	ft_lstclear(&head, del_lstcontent);
+	printf("%p\n", head);
+}
 */
-// **lst = &ptr , ptr is pointing to a node
+// **lst = &head
 // del function deletes content of the node.
 // delete node, free(node) and every successor
-// pointer to the list set to null, lst = NULL;
