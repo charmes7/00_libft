@@ -24,3 +24,6 @@ ft_lstdelone (reworked)
 ft_lstclear (reworked)
 ft_lstiter (reworked)
 ft_lstmap (reworked)
+
+TO:DO
+fix ft_split (free function won't work if arr[i] is not null terminated, while (arr[i]) will keep on going and freeing unnecessary stuff)

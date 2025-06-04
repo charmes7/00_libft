@@ -6,7 +6,7 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 19:30:21 by shkoh             #+#    #+#             */
-/*   Updated: 2025/06/01 05:38:23 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/06/04 16:32:05 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+// char buffer[6] = {'A', 'B', 'C', 'D', 'E', 'F'}
+// ft_memmove(&buffer[2],  &buffer[0], 4)
+// foward copying
+// char buffer[6] = {'A', 'B', 'A', 'B', 'A', 'B'}
+// backward copying
+// char buffer[6] = {'A', 'B', 'A', 'B', 'C', 'D'}
 
 /*
 #include <stdio.h>
