@@ -1,4 +1,0 @@
-
-TO:DO
-fix ft_split (free function won't work if arr[i] is not null terminated, while (arr[i]) will keep on going and freeing unnecessary stuff)
-reduce and shorten the codes, try to reuse functions

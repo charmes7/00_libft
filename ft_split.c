@@ -6,21 +6,18 @@
 /*   By: shkoh <shkoh@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 18:17:13 by shkoh             #+#    #+#             */
-/*   Updated: 2025/06/02 14:21:13 by shkoh            ###   ########.fr       */
+/*   Updated: 2025/06/05 19:30:59 by shkoh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_split(char **arr)
+static void	free_split(char **arr, int i)
 {
-	int	i;
-
-	i = 0;
-	while (arr[i])
+	while (i >= 0)
 	{
 		free(arr[i]);
-		i++;
+		i--;
 	}
 	free(arr);
 }
@@ -96,7 +93,7 @@ char	**ft_split(char const *s, char c)
 		s = ft_extract(&(arr[i]), s, c);
 		if (!s)
 		{
-			free_split(arr);
+			free_split(arr, i);
 			return (NULL);
 		}
 		i++;
