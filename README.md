@@ -14,19 +14,20 @@ This library is divided into three parts:
 
 A manual re-implementation of core functions from the C standard library. This part focuses on low-level memory and string manipulation without using the original `libc` functions.
 
-**Examples Include:**
-* **Memory Operations:** `ft_memset`, `ft_memcpy`, `ft_calloc`, `ft_bzero`
-* **String Manipulation:** `ft_strlen`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strlcpy`, `ft_strnstr`
-* **Character Testing:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
-* **Conversion:** `ft_toupper`, `ft_tolower`
+**Key Functions Include:**
+* **Memory Operations:** `ft_memset`, `ft_memcpy`, `ft_memmove`, `ft_memcmp`, `ft_calloc`, `ft_bzero`
+* **String Manipulation:** `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strdup`, `ft_strchr`, `ft_strrchr`
+* **Type Checking:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`
 
 ### **Part 2: Additional Functions (Mandatory)**
 
 Custom utility functions necessary for everyday programming tasks:
 
-* **String Utilities:** `ft_substr`, `ft_strjoin`, `ft_strtrim`, `ft_strmapi`
-* **Conversion:** `ft_itoa` (Integer to ASCII)
-* **File Descriptors:** `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`
+* **Advanced String Processing:**
+    * `ft_split`: Handles dynamic memory allocation to return an array of strings, delimited by a specified character.
+    * `ft_itoa`: Converts an integer into its string representation, handling all edge cases.
+    * `ft_strjoin`, `ft_substr`, `ft_strtrim`
+* **I/O Operations:** `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd` (Functions that write to a specified file descriptor).
 
 ### **Part 3: Linked List Functions (Bonus Completed)**
 
